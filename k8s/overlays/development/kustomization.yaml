@@ -12,4 +12,4 @@ patches:
 images:
 - name: ghcr.io/victormilk/poc-service
   newName: ghcr.io/victormilk/poc-service
-  newTag: f9b53938077d33bca692c51840b5a7c5b6b24297
+  newTag: f8ebad765c1797ed9b3aa742ffb1114fce8829a4

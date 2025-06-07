@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: poc-service
+spec:
+  project: default
+  source:
+    path: k8s/overlays/$(namespace)
+    repoURL: 'https://github.com/victormilk/poc-service'
+    targetRevision: HEAD
+  destination:
+    namespace: $(namespace)
+    server: 'https://kubernetes.default.svc'

@@ -34,7 +34,7 @@ jobs:
         run: ./gradlew build
 
       - name: Check folders
-        run: ls -l
+        run: ls -l build/libs
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3

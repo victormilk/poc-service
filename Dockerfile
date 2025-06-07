@@ -3,7 +3,7 @@ WORKDIR /app
 COPY . .
 RUN gradle --no-daemon build
 
-FROM eclipse-temurin:24.0.1_9-jdk-alpine as final
+FROM eclipse-temurin:24.0.1_9-jdk-alpine AS final
 WORKDIR /app
 COPY --from=builder app/build/libs/poc-service-*.jar application.jar
 EXPOSE 8080

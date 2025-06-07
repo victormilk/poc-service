@@ -45,7 +45,7 @@ jobs:
 
       - name: Update Kustomize Image Tag for dev
         run: |
-          cd overlays/dev
+          cd k8s/overlays/dev
           kustomize edit set image ghcr.io/victormilk/poc-service=ghcr.io/victormilk/poc-service:${{ github.sha }}
           cd ../..
           git status
@@ -74,7 +74,7 @@ jobs:
 
       - name: Update Kustomize Image Tag for prod
         run: |
-          cd overlays/prod
+          cd k8s/overlays/prod
           kustomize edit set image ghcr.io/victormilk/poc-service=ghcr.io/victormilk/poc-service:${{ github.sha }}
           cd ../..
           git status

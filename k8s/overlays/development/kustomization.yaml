@@ -8,6 +8,7 @@ resources:
 
 patches:
 - path: hpa.yaml
+
 images:
 - name: ghcr.io/victormilk/poc-service
   newName: ghcr.io/victormilk/poc-service

@@ -4,7 +4,11 @@ kind: Kustomization
 namespace: production
 
 resources:
-  - ../../base
+- ../../base
 
 patches:
-  - path: hpa.yaml
+- path: hpa.yaml
+images:
+- name: ghcr.io/victormilk/poc-service
+  newName: ghcr.io/victormilk/poc-service
+  newTag: af6149009d8956af4ec756472a92a954abf0b4b1

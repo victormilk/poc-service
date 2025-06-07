@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: poc-service
-          image: nginx
+          image: ghcr.io/victormilk/poc-service
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
       restartPolicy: Always

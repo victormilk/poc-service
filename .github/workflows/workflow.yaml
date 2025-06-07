@@ -45,7 +45,7 @@ jobs:
 
       - name: Update Kustomize Image Tag for dev
         run: |
-          cd k8s/overlays/dev
+          cd k8s/overlays/development
           kustomize edit set image ghcr.io/victormilk/poc-service=ghcr.io/victormilk/poc-service:${{ github.sha }}
           cd ../..
           git status
@@ -54,7 +54,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add overlays/dev/kustomization.yaml
+          git add k8s/overlays/development/kustomization.yaml
           git diff --staged --quiet || git commit -m "chore: update dev image tag to ${{ github.sha }}"
           git push
         env:
@@ -74,7 +74,7 @@ jobs:
 
       - name: Update Kustomize Image Tag for prod
         run: |
-          cd k8s/overlays/prod
+          cd k8s/overlays/production
           kustomize edit set image ghcr.io/victormilk/poc-service=ghcr.io/victormilk/poc-service:${{ github.sha }}
           cd ../..
           git status
@@ -83,7 +83,7 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add overlays/prod/kustomization.yaml
+          git add k8s/overlays/production/kustomization.yaml
           git diff --staged --quiet || git commit -m "chore: promote image tag ${{ github.sha }} to prod"
           git push
         env:
